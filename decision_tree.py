@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------
-# AUTHOR: your name
-# FILENAME: title of the source file
-# SPECIFICATION: description of the program
+# AUTHOR: Henry Hu
+# FILENAME: decision_tree.py
+# SPECIFICATION: Sample program to fill in. Creates a decision tree.
 # FOR: CS 4210- Assignment #1
 # TIME SPENT: how long it took you to complete the assignment
 #-----------------------------------------------------------*/
@@ -28,7 +28,19 @@ with open('contact_lens.csv', 'r') as csvfile:
 #transform the original categorical training features to numbers and add to the 4D array X. For instance Young = 1, Prepresbyopic = 2, Presbyopic = 3
 # so X = [[1, 1, 1, 1], [2, 2, 2, 2], ...]]
 #--> add your Python code here
-# X =
+
+print('Begin')
+
+transform_map = {'Young': 1, 'Prepresbyopic': 2, 'Presbyopic': 3, 'Myope': 1, 'Hypermetrope': 2, 'Yes': 1, 'No': 2, 'Reduced': 1, 'Normal': 2}
+
+for sample in db:
+    current_instance = []
+    for feature_val in sample:
+        val = transform_map.get(feature_val)
+        current_instance.append(val)
+    X.append(current_instance)
+
+print(str(X))
 
 #transform the original categorical training classes to numbers and add to the vector Y. For instance Yes = 1, No = 2, so Y = [1, 1, 2, 2, ...]
 #--> addd your Python code here
