@@ -3,7 +3,7 @@
 # FILENAME: decision_tree.py
 # SPECIFICATION: Sample program to fill in. Creates a decision tree.
 # FOR: CS 4210- Assignment #1
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: 30 minutes
 #-----------------------------------------------------------*/
 
 #IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard
@@ -38,9 +38,11 @@ for sample in db:
     for feature_val in sample:
         val = transform_map.get(feature_val)
         current_instance.append(val)
+    Y.append(current_instance.pop())
     X.append(current_instance)
 
 print(str(X))
+print(str(Y))
 
 #transform the original categorical training classes to numbers and add to the vector Y. For instance Yes = 1, No = 2, so Y = [1, 1, 2, 2, ...]
 #--> addd your Python code here
